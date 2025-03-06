@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio</title>
+    <title>Emilio García Mondragón | Portfolio</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Emilio García Mondragón</h1>
         <p>Desarrollador de Software Jr</p>
     </header>
+
+    <button id="openNav" class="menu-btn">☰</button>
+
+    <nav id="sidebar">
+        <button id="closeNav" class="close-btn">&times;</button>
+        <ul>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
 
     <section id="proyectos">
         <h2>Proyectos</h2>
@@ -43,17 +57,16 @@
 
     <section id="habilidades">
         <h2>Habilidades</h2>
-        <ul>
-            <li>Python</li>
-            <li>HTML</li>
-            <li>Flask</li>
-            <li>CSS</li>
-            <li>Git</li>
-            <li>Docker</li>
-            <li>Machine Learning</li>
-            <li>Fine-Tuning</li>
-            <li>SQL</li>
-        </ul>
+        <div class="habilidades-grid">
+            <div class="habilidad"><i class="fab fa-python"></i> Python</div>
+            <div class="habilidad"><i class="fab fa-html5"></i> HTML</div>
+            <div class="habilidad"><i class="fab fa-css3-alt"></i> CSS</div>
+            <div class="habilidad"><i class="fab fa-git"></i> GIT</div>
+            <div class="habilidad"><i class="fab fa-docker"></i> Docker</div>
+            <div class="habilidad"><i class="fas fa-brain"></i> Machine Learning</div>
+            <div class="habilidad"><i class="fas fa-adjust"></i> Fine-Tuning</div>
+            <div class="habilidad"><i class="fas fa-database"></i> SQL</div>
+        </div>
     </section>
 
     <section id="sobre-mi">
@@ -70,11 +83,32 @@
 
     <section id="contacto">
         <h2>Contacto</h2>
-        <p>Puedes contactarme en <a href="Gmail:emilio34hd@gmail.com">emilio34hd@gmail.com</a>.</p>
+        <p>Puedes contactarme en <a href="mailto:emilio34hd@gmail.com"><i class="fas fa-mail-bulk"> emilio34hd@gmail.com</i></a>.</p>
     </section>
 
     <meta name="description" content="Portfolio de Emilio García Mondragón, desarrollador de software con experiencia en programación, inteligencia artificial y automatización.">
     <meta name="keywords" content="desarrollador de software, python, inteligencia artificial, machine learning, visión artificial, chatbot, Flask, HTML, CSS">
+
+    <script>
+        document.getElementById("openNav").addEventListener("click", function() {
+            document.getElementById("sidebar").style.right = "0";
+        });
+        
+        document.getElementById("closeNav").addEventListener("click", function() {
+            document.getElementById("sidebar").style.right = "-250px";
+        });
+        
+        // Cerrar el menú si se hace clic fuera de él
+        document.addEventListener("click", function(event) {
+            let sidebar = document.getElementById("sidebar");
+            let button = document.getElementById("openNav");
+        
+            if (!sidebar.contains(event.target) && !button.contains(event.target)) {
+                sidebar.style.right = "-250px";
+            }
+        });
+        </script>
+        
 
 </body>
 </html>
